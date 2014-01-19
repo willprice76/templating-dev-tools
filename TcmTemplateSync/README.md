@@ -7,15 +7,15 @@ There is also an option to download TBBs from the CMS to the local file system.
 By using this tool, you can edit your TBBs in the most appropriate development environment rather than the CMS GUI and use that environment to compile/validate them before uploading. You can hook it in as a build step, or menu option, or even via source control for continuous integration. It uses the Core Service, rather than webdav, so you will get meaningful error messages when attempting to upload invalid data (for example for C#, XSLT or Razor TBBs).
 
 ## Usage ##
+
+    TcmTemplateSync /folder:tcm:10-203-2 /endpoint:http://cms/webservices/CoreService2013.svc/wsHttp 
+    	"D:\Dev\Layouts\"
+
 Put **TcmTemplateSync.exe** along with **Tridion.ContentManager.CoreService.Client.dll** in a directory on your local machine and run it from the command line, passing (as a minimum) the following arguments:
 
 - **folder** :The tcm uri of the folder to Sync with in the CMS
 - **endpoint** :The address of your core service endpoint (wsHttp, netTcp or basicHttp)
 - The path to the local folder you are synchronizing
-
-
-    TcmTemplateSync /folder:tcm:10-203-2 /endpoint:http://cms/webservices/CoreService2013.svc/wsHttp 
-    	"D:\Dev\Layouts\"
 
 `TcmTemplateSync /help` gives full options:
 
