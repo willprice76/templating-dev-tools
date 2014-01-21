@@ -22,7 +22,6 @@ namespace Tridion.Extensions.Deployment.TemplateUpload
             bool show_help = false;
             Config config = new Config();
             string action = null;
-            string tbbFolderRoot = null;
             var p = new OptionSet() {
                 { "folder:", "The TCMURI of the Tridion folder to sync with",
                   v => config.RootFolderUri = v },
@@ -68,7 +67,7 @@ namespace Tridion.Extensions.Deployment.TemplateUpload
                 {
                     if (!Directory.Exists(config.LocalFolderRoot))
                     {
-                        Console.Write("ERROR: Directory {0} does not exist", tbbFolderRoot);
+                        Console.Write("ERROR: Directory {0} does not exist", config.LocalFolderRoot);
                         Environment.ExitCode = ERROR_BAD_ARGUMENTS;
                         return;
                     }
